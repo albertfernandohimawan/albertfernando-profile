@@ -582,6 +582,82 @@
     .rec-grid{grid-template-columns:1fr;}
   }
 
+  /* ===== BEYOND WORK ===== */
+  .beyond-intro{
+    font-size:15px;
+    color:var(--ink-text);
+    max-width:700px;
+    margin-bottom:36px;
+    line-height:1.7;
+  }
+  .video-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+  }
+  .video-card{
+    text-decoration:none;
+    display:block;
+  }
+  .video-thumb{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    background:var(--surface);
+    border:1px solid var(--line);
+  }
+  .video-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .4s ease;
+  }
+  .video-card:hover .video-thumb img{transform:scale(1.05);}
+  .video-play{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .video-play::before{
+    content:"";
+    width:0; height:0;
+    border-top:9px solid transparent;
+    border-bottom:9px solid transparent;
+    border-left:15px solid #fff;
+    margin-left:3px;
+  }
+  .video-play{
+    width:46px; height:46px;
+    border-radius:50%;
+    background:rgba(18,33,59,.65);
+    margin:auto;
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+  }
+  .video-title{
+    margin-top:10px;
+    font-size:13px;
+    line-height:1.45;
+    color:var(--ink-text);
+    font-weight:500;
+  }
+  .video-source{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    margin-top:4px;
+  }
+  @media (max-width:860px){
+    .video-grid{grid-template-columns:1fr 1fr;}
+  }
+
   /* ===== SCROLL TO TOP ===== */
   .scroll-top{
     position:fixed;
@@ -1247,6 +1323,55 @@
           <li>Moka Star Sales — Mar–Nov 2021</li>
           <li>Moka Best Sales Executive — Q4 2019</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal" id="beyond">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Beyond Work</h2>
+        <span class="section-tag">Community &amp; Speaking</span>
+      </div>
+      <p class="beyond-intro">Outside of my commercial role, I actively volunteer in community leadership — speaking on stage, hosting podcast conversations, and leading a community of 1,000+ people. It's where I sharpen public speaking, storytelling, and large-scale community leadership skills that carry directly into my work leading field teams.</p>
+      <div class="video-grid">
+
+        <a class="video-card" href="https://www.youtube.com/watch?v=Tw3frfqVRPU" target="_blank" rel="noopener">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/Tw3frfqVRPU/hqdefault.jpg" alt="Turun Jabatan, Tapi Malah Bisa Jualan 3x Lipat!" loading="lazy">
+            <div class="video-play"></div>
+          </div>
+          <div class="video-title">Turun Jabatan, Tapi Malah Bisa Jualan 3x Lipat!</div>
+          <div class="video-source">Marketplace Wisdom · GMS Church</div>
+        </a>
+
+        <a class="video-card" href="https://www.youtube.com/watch?v=12VwKpn-ZGE" target="_blank" rel="noopener">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/12VwKpn-ZGE/hqdefault.jpg" alt="Tujuan Hidup — Bicara Tentang Podcast" loading="lazy">
+            <div class="video-play"></div>
+          </div>
+          <div class="video-title">"Tujuan Hidup"</div>
+          <div class="video-source">Bicara Tentang Podcast</div>
+        </a>
+
+        <a class="video-card" href="https://www.youtube.com/watch?v=yvjACeG6Ws8" target="_blank" rel="noopener">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/yvjACeG6Ws8/hqdefault.jpg" alt="Communication Hack — Army of God Youth" loading="lazy">
+            <div class="video-play"></div>
+          </div>
+          <div class="video-title">Communication Hack</div>
+          <div class="video-source">Army of God Youth</div>
+        </a>
+
+        <a class="video-card" href="https://www.youtube.com/watch?v=eeLG0oU456I" target="_blank" rel="noopener">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/eeLG0oU456I/hqdefault.jpg" alt="One Love Until The End — Bicara Tentang Podcast" loading="lazy">
+            <div class="video-play"></div>
+          </div>
+          <div class="video-title">One Love Until The End</div>
+          <div class="video-source">Bicara Tentang Podcast</div>
+        </a>
+
       </div>
     </div>
   </section>
