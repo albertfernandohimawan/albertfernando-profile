@@ -73,10 +73,16 @@
   }
   .hero-photo{
     width:100%;
-    aspect-ratio:4/5;
+    max-width:280px;
+    aspect-ratio:1/1;
     object-fit:cover;
-    border:1px solid var(--line);
+    border-radius:50%;
+    border:6px solid var(--paper);
+    outline:1px solid var(--line);
     background:var(--surface);
+    margin:0 auto;
+    display:block;
+    box-shadow:0 8px 24px rgba(18,33,59,.12);
   }
   h1.name{
     font-family:'Plus Jakarta Sans', sans-serif;
@@ -85,6 +91,12 @@
     line-height:1.03;
     letter-spacing:-.01em;
     max-width:760px;
+    color:var(--ink);
+  }
+  .hi-text{
+    display:inline-block;
+    font-size:clamp(38px, 5.4vw, 68px);
+    font-weight:600;
     color:var(--ink);
   }
   .role-line{
@@ -106,6 +118,36 @@
   }
   .hero-meta a{text-decoration:none; border-bottom:1px solid var(--line-strong); padding-bottom:2px;}
   .hero-meta a:hover{border-color:var(--green); color:var(--green);}
+
+  .hero-cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:32px;
+  }
+  .hero-cta-primary{
+    background:var(--ink);
+    color:#fff;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    padding:13px 26px;
+    border-radius:999px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .hero-cta-primary:hover{background:var(--amber);}
+  .hero-cta-secondary{
+    background:transparent;
+    color:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    padding:13px 26px;
+    border-radius:999px;
+    border:1px solid var(--line-strong);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .hero-cta-secondary:hover{border-color:var(--amber); color:var(--amber);}
 
   .ticker{
     background:var(--ink);
@@ -539,6 +581,52 @@
     .rec-grid{grid-template-columns:1fr;}
   }
 
+  /* ===== SCROLL TO TOP ===== */
+  .scroll-top{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:var(--ink);
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(8px);
+    transition:opacity .25s ease, transform .25s ease, background .2s ease;
+    z-index:80;
+  }
+  .scroll-top.visible{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+  .scroll-top:hover{background:var(--amber);}
+
+  /* ===== SEE MORE RECOMMENDATIONS ===== */
+  .rec-card.rec-hidden{display:none;}
+  .rec-more-wrap{
+    text-align:center;
+    margin-top:28px;
+  }
+  .rec-more-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink);
+    background:var(--surface);
+    border:1px solid var(--line-strong);
+    padding:11px 24px;
+    cursor:pointer;
+  }
+  .rec-more-btn:hover{border-color:var(--amber); color:var(--amber);}
+
   .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
   .reveal.in{opacity:1; transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){
@@ -597,8 +685,58 @@
     white-space:nowrap;
   }
   .nav-cta:hover{background:var(--amber);}
+
+  .nav-burger{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    width:32px;
+    height:32px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    padding:0;
+  }
+  .nav-burger span{
+    display:block;
+    width:22px;
+    height:2px;
+    background:var(--ink);
+    transition:transform .25s ease, opacity .25s ease;
+  }
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .nav-mobile-panel{
+    display:none;
+    flex-direction:column;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    padding:8px 20px 18px;
+  }
+  .nav-mobile-panel.open{display:flex;}
+  .nav-mobile-panel a{
+    padding:13px 4px;
+    text-decoration:none;
+    font-size:15px;
+    color:var(--ink-text);
+    font-weight:500;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-mobile-panel a:last-of-type{border-bottom:none;}
+  .nav-mobile-panel a:hover{color:var(--amber);}
+  .nav-mobile-panel .nav-cta{
+    margin-top:12px;
+    text-align:center;
+  }
+
   @media (max-width:760px){
     .nav-links{display:none;}
+    .nav-cta{display:none;}
+    .nav-burger{display:flex;}
     .topnav-inner{padding:14px 20px;}
   }
 
@@ -692,7 +830,7 @@
 
   @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr;}
-    .hero-photo{max-width:220px; margin:0 auto;}
+    .hero-photo{max-width:180px;}
     .ticker-row{grid-template-columns:repeat(2,1fr);}
     .ticker-item:nth-child(2){border-right:none;}
     .ticker-item{border-bottom:1px solid rgba(255,255,255,.12);}
@@ -713,7 +851,7 @@
 
 <nav class="topnav">
   <div class="topnav-inner">
-    <a href="#" class="brand">Albert<span class="dot">.</span></a>
+    <a href="#" class="brand">Albert Fernando<span class="dot">.</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -723,6 +861,18 @@
       <li><a href="#education">Education</a></li>
     </ul>
     <a href="mailto:albertfernandohimawan@gmail.com" class="nav-cta">Contact Me</a>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-panel" id="navMobilePanel">
+    <a href="#about" onclick="closeMobileNav()">About</a>
+    <a href="#experience" onclick="closeMobileNav()">Experience</a>
+    <a href="#projects" onclick="closeMobileNav()">Projects</a>
+    <a href="#recommendations" onclick="closeMobileNav()">Recommendations</a>
+    <a href="#skills" onclick="closeMobileNav()">Skills</a>
+    <a href="#education" onclick="closeMobileNav()">Education</a>
+    <a href="mailto:albertfernandohimawan@gmail.com" class="nav-cta">Contact Me</a>
   </div>
 </nav>
 
@@ -731,13 +881,17 @@
     <div class="hero-grid">
       <div>
         <p class="eyebrow">Open to new opportunities · Jakarta, Indonesia</p>
-        <h1 class="name">Albert Fernando<br>Himawan</h1>
+        <h1 class="name"><span class="hi-text">Hi, I'm</span><br>Albert Fernando<br>Himawan</h1>
         <p class="role-line">Commercial leader with <strong>10+ years</strong> of experience across Indonesia's tech, fintech, and SaaS ecosystem — building field teams, designing go-to-market strategy, and converting merchant portfolios into durable retention.</p>
         <div class="hero-meta">
           <a href="mailto:albertfernandohimawan@gmail.com">albertfernandohimawan@gmail.com</a>
           <a href="tel:+6287878870707">+62 878 7887 0707</a>
           <a href="https://www.linkedin.com/in/albertfernandohimawan/" target="_blank" rel="noopener">LinkedIn ↗</a>
           <span>Jakarta, Indonesia</span>
+        </div>
+        <div class="hero-cta-row">
+          <a class="hero-cta-primary" href="https://www.linkedin.com/in/albertfernandohimawan/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          <a class="hero-cta-secondary" href="#experience">View Experiences</a>
         </div>
       </div>
       <img class="hero-photo" src="assets/headshot.jpg" alt="Portrait of Albert Fernando Himawan">
@@ -835,10 +989,10 @@
           <div class="exp-org">District Sales Manager</div>
           <div class="exp-role">1 year 3 months</div>
           <ul>
-            <li>Lead 5 GoPay Team Leaders and 1 Moka Area Sales Manager, a total of 70 sales executives, across GMA (QRIS), GoPay Spiker, Moka POS, GoPay Pinjam Modal, and GoPay Agen.</li>
-            <li>Spearhead go-to-market expansion into new territories (Serang &amp; Cilegon) with seamless launch execution.</li>
+            <li>Lead <strong>5 GoPay Team Leaders and 1 Moka Area Sales Manager</strong>, a total of <strong>70 sales executives</strong>, across GMA (QRIS), GoPay Spiker, Moka POS, GoPay Pinjam Modal, and GoPay Agen.</li>
+            <li>Spearhead go-to-market expansion into <strong>new territories (Serang &amp; Cilegon)</strong> with seamless launch execution.</li>
             <li>Directed Pilot Project "Keystone" with GoPay Consumer to accelerate QRIS Spiker adoption across Kab. Tangerang, Kota Tangerang, and South Tangerang.</li>
-            <li>Ranked #1 nationally for portfolio health — 89% month-over-month retention for newly onboarded enterprise merchants, via an overhauled post-sales success framework.</li>
+            <li><strong>Ranked #1 nationally</strong> for portfolio health — <strong>89% month-over-month retention</strong> for newly onboarded enterprise merchants, via an overhauled post-sales success framework.</li>
           </ul>
         </div>
       </div>
@@ -850,9 +1004,9 @@
           <div class="exp-org">Account Manager, GoPay</div>
           <div class="exp-role">1 year 9 months</div>
           <ul>
-            <li>Managed a high-value portfolio of enterprise and SME accounts, driving digital transformation and software ecosystem adoption.</li>
+            <li>Managed a <strong>high-value portfolio of enterprise and SME accounts</strong>, driving digital transformation and software ecosystem adoption.</li>
             <li>Designed data-backed sales playbooks aligning regional execution with global corporate OKRs.</li>
-            <li>Averaged 110% of designated revenue targets, with significant GTV growth on the Managed Merchant portfolio.</li>
+            <li><strong>Averaged 110% of designated revenue targets</strong>, with significant GTV growth on the Managed Merchant portfolio.</li>
           </ul>
         </div>
       </div>
@@ -866,7 +1020,7 @@
           <div class="exp-org">Area Sales Manager</div>
           <div class="exp-role">7 months</div>
           <ul>
-            <li>Directed regional commercial operations and led a sales organization driving aggressive market penetration.</li>
+            <li>Directed regional commercial operations and led a sales organization driving <strong>aggressive market penetration</strong>.</li>
             <li>Architected data-driven go-to-market strategies, optimizing the end-to-end sales cycle.</li>
           </ul>
         </div>
@@ -879,8 +1033,8 @@
           <div class="exp-org">Senior Sales Executive</div>
           <div class="exp-role">11 months</div>
           <ul>
-            <li>Spearheaded retention and growth strategies for high-value MOKA Managed Merchants.</li>
-            <li>Drove adoption of the GoTo merchant ecosystem (MOKA, GoStore, GoBiz Plus) — sustained 120% of designated sales target.</li>
+            <li>Spearheaded retention and growth strategies for <strong>high-value MOKA Managed Merchants</strong>.</li>
+            <li>Drove adoption of the GoTo merchant ecosystem (MOKA, GoStore, GoBiz Plus) — <strong>sustained 120% of designated sales target</strong>.</li>
           </ul>
         </div>
       </div>
@@ -893,7 +1047,7 @@
           <div class="exp-role">3 years 4 months</div>
           <ul>
             <li>Pioneered aggressive territory expansion, establishing a robust B2B client network through high-volume prospecting.</li>
-            <li>Consistently exceeded monthly sales quotas by up to 150%.</li>
+            <li>Consistently <strong>exceeded monthly sales quotas by up to 150%</strong>.</li>
           </ul>
         </div>
       </div>
@@ -976,7 +1130,7 @@
 
         <div class="rec-card">
           <div class="rec-quote-mark">"</div>
-          <p class="rec-quote">Albert combines strategic thinking with excellent execution, consistently delivering outstanding business results while demonstrating strong ownership, adaptability, and collaboration across teams. A highly dependable commercial leader who continuously raises the bar, develops those around him, and creates meaningful business impact.</p>
+          <p class="rec-quote">Albert combines <strong>strategic thinking with excellent execution</strong>, consistently delivering outstanding business results while demonstrating strong ownership, adaptability, and collaboration across teams. A highly dependable commercial leader who continuously raises the bar, develops those around him, and creates meaningful business impact.</p>
           <div class="rec-person">
             <div class="rec-name">Chrisman Sinurat</div>
             <div class="rec-role">Regional Sales Head – MSME Sales, GoTo Financial</div>
@@ -986,7 +1140,7 @@
 
         <div class="rec-card">
           <div class="rec-quote-mark">"</div>
-          <p class="rec-quote">Albert is an exceptionally data-driven leader who always approaches challenges with thorough analysis and structured problem-solving. I learned a great deal from him about coaching, decision-making, and translating data into actionable business strategies — a leader who can drive results while genuinely developing the people around him.</p>
+          <p class="rec-quote">Albert is an exceptionally <strong>data-driven leader</strong> who always approaches challenges with thorough analysis and structured problem-solving. I learned a great deal from him about coaching, decision-making, and translating data into actionable business strategies — a leader who can <strong>drive results while genuinely developing the people around him</strong>.</p>
           <div class="rec-person">
             <div class="rec-name">Putra Setia Wiratama</div>
             <div class="rec-role">Area Sales Manager</div>
@@ -994,9 +1148,9 @@
           </div>
         </div>
 
-        <div class="rec-card">
+        <div class="rec-card rec-hidden">
           <div class="rec-quote-mark">"</div>
-          <p class="rec-quote">Albert has a rare ability to connect business goals with operational excellence. He doesn't just focus on achieving the numbers — he actively looks for ways to make things simpler, more scalable, and smoother for the team, whether it's identifying inefficiencies, leveraging data, or finding opportunities to automate repetitive work.</p>
+          <p class="rec-quote">Albert has a <strong>rare ability to connect business goals with operational excellence</strong>. He doesn't just focus on achieving the numbers — he actively looks for ways to make things simpler, more scalable, and smoother for the team, whether it's identifying inefficiencies, leveraging data, or finding opportunities to automate repetitive work.</p>
           <div class="rec-person">
             <div class="rec-name">Nethania Dinari Ramadhani</div>
             <div class="rec-role">Device Management Lead, GoTo Group</div>
@@ -1004,9 +1158,9 @@
           </div>
         </div>
 
-        <div class="rec-card">
+        <div class="rec-card rec-hidden">
           <div class="rec-quote-mark">"</div>
-          <p class="rec-quote">Albert repeatedly performed and gained recognition from many stakeholders. He will never be satisfied with just "enough" — he will always cover the extra mile for the sake of his team, and ultimately the company's success.</p>
+          <p class="rec-quote">Albert repeatedly performed and <strong>gained recognition from many stakeholders</strong>. He will never be satisfied with just "enough" — he will always cover the extra mile for the sake of his team, and ultimately the company's success.</p>
           <div class="rec-person">
             <div class="rec-name">Abimanyu Satrio Ambiarto</div>
             <div class="rec-role">MSME Sales Strategy &amp; Ops Excellence, GoTo</div>
@@ -1014,9 +1168,9 @@
           </div>
         </div>
 
-        <div class="rec-card">
+        <div class="rec-card rec-hidden">
           <div class="rec-quote-mark">"</div>
-          <p class="rec-quote">Albert is an exceptional sales manager with a proven track record of consistently exceeding sales targets. He is an excellent coach who takes a personal interest in the professional development of each team member, and despite his impressive sales record, remains humble and approachable.</p>
+          <p class="rec-quote">Albert is an exceptional sales manager with a <strong>proven track record of consistently exceeding sales targets</strong>. He is an excellent coach who takes a personal interest in the professional development of each team member, and despite his impressive sales record, remains humble and approachable.</p>
           <div class="rec-person">
             <div class="rec-name">Richard Sutradjaja</div>
             <div class="rec-role">Area Sales Manager, GoTo Financial</div>
@@ -1024,6 +1178,9 @@
           </div>
         </div>
 
+      </div>
+      <div class="rec-more-wrap">
+        <button class="rec-more-btn" id="recMoreBtn" onclick="toggleRecommendations()">See more recommendations</button>
       </div>
     </div>
   </section>
@@ -1109,6 +1266,8 @@
   </div>
 </div>
 
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
 <footer>
   <div class="wrap">
     <p class="footer-title">Let's talk about the next commercial leadership role.</p>
@@ -1119,7 +1278,6 @@
     </div>
     <div class="footer-bottom">
       <span>Albert Fernando Himawan — Jakarta, Indonesia</span>
-      <span>Updated July 2026</span>
     </div>
     <div class="footer-copyright">© 2026 Albert Fernando Himawan. All rights reserved.</div>
   </div>
@@ -1188,6 +1346,37 @@
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') closeProject();
   });
+
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 500){
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+
+  function toggleRecommendations(){
+    const hidden = document.querySelectorAll('.rec-card.rec-hidden');
+    const btn = document.getElementById('recMoreBtn');
+    const isShowing = btn.textContent.indexOf('less') > -1;
+    hidden.forEach(card => card.style.display = isShowing ? 'none' : 'flex');
+    btn.textContent = isShowing ? 'See more recommendations' : 'Show less';
+  }
+
+  function toggleMobileNav(){
+    const panel = document.getElementById('navMobilePanel');
+    const burger = document.getElementById('navBurger');
+    const isOpen = panel.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  function closeMobileNav(){
+    document.getElementById('navMobilePanel').classList.remove('open');
+    document.getElementById('navBurger').classList.remove('open');
+    document.getElementById('navBurger').setAttribute('aria-expanded', 'false');
+  }
 </script>
 
 <script>
