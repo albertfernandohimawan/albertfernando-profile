@@ -339,34 +339,33 @@
     max-width:620px;
     line-height:1.15;
   }
-  .footer-links{
+  .footer-icons{
     margin-top:36px;
     display:flex;
-    flex-wrap:wrap;
-    gap:14px 32px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:14px;
+    gap:16px;
   }
-  .footer-links a{
-    text-decoration:none;
-    border-bottom:1px solid rgba(255,255,255,.2);
-    padding-bottom:3px;
-  }
-  .footer-links a:hover{border-color:#7BC79A; color:#7BC79A;}
-  .footer-bottom{
-    margin-top:64px;
-    padding-top:24px;
-    border-top:1px solid rgba(255,255,255,.12);
+  .footer-icon{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.25);
     display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:10px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:#B9C4D6;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    transition:background .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .footer-icon svg{width:20px; height:20px;}
+  .footer-icon:hover{
+    background:#7BC79A;
+    border-color:#7BC79A;
+    color:var(--ink);
   }
   .footer-copyright{
-    margin-top:18px;
+    margin-top:48px;
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.12);
     font-family:'IBM Plex Mono', monospace;
     font-size:11.5px;
     color:#7C88A0;
@@ -962,7 +961,6 @@
         <p class="role-line">Commercial leader with <strong>10+ years</strong> of experience across Indonesia's tech, fintech, and SaaS ecosystem — building field teams, designing go-to-market strategy, and converting merchant portfolios into durable retention.</p>
         <div class="hero-meta">
           <a href="mailto:albertfernandohimawan@gmail.com">albertfernandohimawan@gmail.com</a>
-          <a href="tel:+6287878870707">+62 878 7887 0707</a>
           <span>Jakarta, Indonesia</span>
         </div>
         <div class="hero-cta-row">
@@ -1396,13 +1394,13 @@
 <footer>
   <div class="wrap">
     <p class="footer-title">Let's talk about the next commercial leadership role.</p>
-    <div class="footer-links">
-      <a href="mailto:albertfernandohimawan@gmail.com">Email →</a>
-      <a href="tel:+6287878870707">Phone →</a>
-      <a href="https://www.linkedin.com/in/albertfernandohimawan/" target="_blank" rel="noopener">LinkedIn →</a>
-    </div>
-    <div class="footer-bottom">
-      <span>Albert Fernando Himawan — Jakarta, Indonesia</span>
+    <div class="footer-icons">
+      <a href="mailto:albertfernandohimawan@gmail.com" class="footer-icon" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 6 10 7 10-7"></path></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/albertfernandohimawan/" target="_blank" rel="noopener" class="footer-icon" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.94 6 2.5 6S0 4.88 0 3.5 1.04 1 2.48 1s2.5 1.12 2.5 2.5zM.24 8.25h4.5V23H.24V8.25zM8.5 8.25h4.32v2.02h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V23h-4.5v-6.75c0-1.61-.03-3.68-2.24-3.68-2.25 0-2.59 1.75-2.59 3.56V23H8.5V8.25z"></path></svg>
+      </a>
     </div>
     <div class="footer-copyright">© 2026 Albert Fernando Himawan. All rights reserved.</div>
   </div>
