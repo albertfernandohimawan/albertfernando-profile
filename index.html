@@ -330,6 +330,215 @@
     text-align:center;
   }
 
+  /* ===== PROJECTS ===== */
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .project-card{
+    background:var(--paper);
+    padding:28px 26px;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:background .2s ease;
+    text-align:left;
+    border:none;
+    width:100%;
+    font-family:inherit;
+  }
+  .project-card:hover{background:var(--surface);}
+  .project-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .project-title{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--ink);
+  }
+  .project-teaser{
+    font-size:14px;
+    color:var(--ink-text);
+    line-height:1.55;
+  }
+  .project-open{
+    margin-top:6px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--amber);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .project-card:hover .project-open{gap:9px;}
+  .project-open{transition:gap .2s ease;}
+
+  /* Modal */
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(18,33,59,.55);
+    backdrop-filter:blur(3px);
+    display:none;
+    align-items:flex-start;
+    justify-content:center;
+    padding:40px 20px;
+    overflow-y:auto;
+    z-index:200;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:var(--paper);
+    max-width:640px;
+    width:100%;
+    margin-top:24px;
+    border:1px solid var(--line);
+    animation:modalIn .25s ease;
+  }
+  @keyframes modalIn{
+    from{opacity:0; transform:translateY(12px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .modal-photo{
+    width:100%;
+    aspect-ratio:16/9;
+    background:
+      repeating-linear-gradient(45deg, var(--surface), var(--surface) 10px, #F1EFE7 10px, #F1EFE7 20px);
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--slate);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .modal-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .modal-body{padding:32px;}
+  .modal-close{
+    position:absolute;
+    top:14px; right:14px;
+    width:32px; height:32px;
+    border-radius:50%;
+    background:var(--ink);
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:2;
+  }
+  .modal-close:hover{background:var(--amber);}
+  .modal-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    margin-bottom:10px;
+  }
+  .modal-title{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-weight:700;
+    font-size:24px;
+    color:var(--ink);
+    margin-bottom:18px;
+  }
+  .modal-desc{
+    font-size:15px;
+    line-height:1.75;
+    color:var(--ink-text);
+    white-space:pre-line;
+  }
+  .modal-media{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:22px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink);
+    background:var(--surface);
+    border:1px solid var(--line-strong);
+    padding:9px 16px;
+    text-decoration:none;
+  }
+  .modal-media:hover{border-color:var(--amber); color:var(--amber);}
+
+  @media (max-width:760px){
+    .project-grid{grid-template-columns:1fr;}
+    .modal-body{padding:24px;}
+  }
+
+  /* ===== RECOMMENDATIONS ===== */
+  .rec-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .rec-card{
+    background:var(--paper);
+    padding:28px 26px;
+    display:flex;
+    flex-direction:column;
+  }
+  .rec-quote-mark{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-size:36px;
+    font-weight:700;
+    color:var(--line-strong);
+    line-height:1;
+    margin-bottom:6px;
+  }
+  .rec-quote{
+    font-size:14.5px;
+    line-height:1.7;
+    color:var(--ink-text);
+    flex-grow:1;
+  }
+  .rec-person{
+    margin-top:20px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+  }
+  .rec-name{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .rec-role{
+    font-size:13px;
+    color:var(--slate);
+    margin-top:2px;
+  }
+  .rec-context{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--amber);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    margin-top:6px;
+  }
+  @media (max-width:760px){
+    .rec-grid{grid-template-columns:1fr;}
+  }
+
   .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
   .reveal.in{opacity:1; transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){
@@ -508,8 +717,10 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#recommendations">Recommendations</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
     </ul>
     <a href="mailto:albertfernandohimawan@gmail.com" class="nav-cta">Contact Me</a>
   </div>
@@ -689,6 +900,46 @@
     </div>
   </section>
 
+  <section class="reveal" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Projects</h2>
+        <span class="section-tag">Selected Initiatives</span>
+      </div>
+      <div class="project-grid">
+
+        <button class="project-card" onclick="openProject('keystone')">
+          <span class="project-date">Mar 2026 — Present</span>
+          <span class="project-title">Project Keystone</span>
+          <span class="project-teaser">Cross-functional GTM pilot with GoPay Consumer that pushed GoPay into the #1 QRIS transaction share position in Banten.</span>
+          <span class="project-open">View details →</span>
+        </button>
+
+        <button class="project-card" onclick="openProject('agen')">
+          <span class="project-date">Feb 2026 — May 2026</span>
+          <span class="project-title">GoPay Agen (PPOB) Rollout</span>
+          <span class="project-teaser">Led merchant expansion across Tangerang, onboarding 170+ merchants in month one — ahead of target.</span>
+          <span class="project-open">View details →</span>
+        </button>
+
+        <button class="project-card" onclick="openProject('ngabuburit')">
+          <span class="project-date">March 2024</span>
+          <span class="project-title">GoPay × Ngabuburit Fest 2024</span>
+          <span class="project-teaser">Activated GoPay Spiker across a high-traffic Ramadan retail festival with Summarecon Mall Bekasi.</span>
+          <span class="project-open">View details →</span>
+        </button>
+
+        <button class="project-card" onclick="openProject('mokagofood')">
+          <span class="project-date">Nov 2021 — Jan 2022</span>
+          <span class="project-title">MOKA × GoFood Growth Program</span>
+          <span class="project-teaser">Cross-platform sales initiative that converted hundreds of F&amp;B outlets onto the MOKA–GoFood ecosystem.</span>
+          <span class="project-open">View details →</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
   <section class="reveal">
     <div class="wrap">
       <div class="section-head">
@@ -711,6 +962,68 @@
           <div class="venture-date">Founder &amp; CEO — Jan 2017 – Jun 2018</div>
         </div>
         <p>Built an O2O platform bridging consumers with informal blue-collar workers, launching with HVAC/AC repair services as the MVP. Selected as a Top 13 National Finalist in "Gerakan 1000 Startup Digital Indonesia," validating the model directly with government ministries and Tier-1 CEOs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal" id="recommendations">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Recommendations</h2>
+        <span class="section-tag">LinkedIn</span>
+      </div>
+      <div class="rec-grid">
+
+        <div class="rec-card">
+          <div class="rec-quote-mark">"</div>
+          <p class="rec-quote">Albert combines strategic thinking with excellent execution, consistently delivering outstanding business results while demonstrating strong ownership, adaptability, and collaboration across teams. A highly dependable commercial leader who continuously raises the bar, develops those around him, and creates meaningful business impact.</p>
+          <div class="rec-person">
+            <div class="rec-name">Chrisman Sinurat</div>
+            <div class="rec-role">Regional Sales Head – MSME Sales, GoTo Financial</div>
+            <div class="rec-context">Managed Albert directly</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-quote-mark">"</div>
+          <p class="rec-quote">Albert is an exceptionally data-driven leader who always approaches challenges with thorough analysis and structured problem-solving. I learned a great deal from him about coaching, decision-making, and translating data into actionable business strategies — a leader who can drive results while genuinely developing the people around him.</p>
+          <div class="rec-person">
+            <div class="rec-name">Putra Setia Wiratama</div>
+            <div class="rec-role">Area Sales Manager</div>
+            <div class="rec-context">Reported to Albert directly</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-quote-mark">"</div>
+          <p class="rec-quote">Albert has a rare ability to connect business goals with operational excellence. He doesn't just focus on achieving the numbers — he actively looks for ways to make things simpler, more scalable, and smoother for the team, whether it's identifying inefficiencies, leveraging data, or finding opportunities to automate repetitive work.</p>
+          <div class="rec-person">
+            <div class="rec-name">Nethania Dinari Ramadhani</div>
+            <div class="rec-role">Device Management Lead, GoTo Group</div>
+            <div class="rec-context">Worked with Albert on different teams</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-quote-mark">"</div>
+          <p class="rec-quote">Albert repeatedly performed and gained recognition from many stakeholders. He will never be satisfied with just "enough" — he will always cover the extra mile for the sake of his team, and ultimately the company's success.</p>
+          <div class="rec-person">
+            <div class="rec-name">Abimanyu Satrio Ambiarto</div>
+            <div class="rec-role">MSME Sales Strategy &amp; Ops Excellence, GoTo</div>
+            <div class="rec-context">Worked with Albert on the same team</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-quote-mark">"</div>
+          <p class="rec-quote">Albert is an exceptional sales manager with a proven track record of consistently exceeding sales targets. He is an excellent coach who takes a personal interest in the professional development of each team member, and despite his impressive sales record, remains humble and approachable.</p>
+          <div class="rec-person">
+            <div class="rec-name">Richard Sutradjaja</div>
+            <div class="rec-role">Area Sales Manager, GoTo Financial</div>
+            <div class="rec-context">Reported to Albert directly</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -783,6 +1096,19 @@
 
 </main>
 
+<div class="modal-overlay" id="projectModal" onclick="if(event.target===this) closeProject()">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="position:relative;">
+    <button class="modal-close" onclick="closeProject()" aria-label="Close">✕</button>
+    <div class="modal-photo" id="modalPhoto">Project photo — add image to see it here</div>
+    <div class="modal-body">
+      <div class="modal-date" id="modalDate"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <a class="modal-media" id="modalMedia" href="#" target="_blank" rel="noopener" style="display:none;">Read coverage →</a>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
     <p class="footer-title">Let's talk about the next commercial leadership role.</p>
@@ -798,6 +1124,71 @@
     <div class="footer-copyright">© 2026 Albert Fernando Himawan. All rights reserved.</div>
   </div>
 </footer>
+
+<script>
+  const projects = {
+    keystone: {
+      date: "March 2026 — Present",
+      title: "Project Keystone",
+      photo: null,
+      media: "https://swa.co.id/read/473463/kuasai-pangsa-transaksi-qris-terbesar-di-banten-gopay-sabet-digiwara-awards-2026",
+      desc: "Directed a strategic cross-functional pilot with GoPay Consumer to accelerate GoPay Spiker adoption and drive consumer transaction volume across Kab. Tangerang, Kota Tangerang, and South Tangerang.\n\nThe initiative was designed to convert everyday consumer payment behavior into sustained QRIS transaction growth at scale — bridging merchant-side acquisition with consumer-side demand generation.\n\nImpact: the collaboration helped GoPay capture the largest share of QRIS transactions in Banten, a result recognized with a Digiwara Award 2026 for regional market leadership."
+    },
+    agen: {
+      date: "February 2026 — May 2026",
+      title: "GoPay Agen (PPOB) Rollout",
+      photo: null,
+      media: null,
+      desc: "Led the rollout of GoPay Agen — a cash withdrawal and bill-payment (PPOB) service — across merchants in both Tangerang city and regency areas.\n\nOnboarded 170+ merchants within the first month, surpassing the initial penetration target. Beyond the numbers, the team ran direct merchant interviews to validate real-world adoption and sentiment.\n\nThrough GoPay Agen, merchants gained the ability to offer cash withdrawal and bill-payment services in-store — driving new foot traffic, customer acquisition, and additional income streams for grassroots businesses.\n\nImpact: a simple embedded-finance feature translated into measurable economic impact at the merchant level, proving out a scalable model for future territory rollouts."
+    },
+    ngabuburit: {
+      date: "March 2024",
+      title: "GoPay × Ngabuburit Fest 2024",
+      photo: null,
+      media: "https://www.instagram.com/p/C4c1hZEvlt4/",
+      desc: "Partnered with Summarecon Mall Bekasi to activate GoPay Spiker across Ngabuburit Fest 2024 (March 15–31), one of the mall's highest-traffic seasonal Ramadan events.\n\nThe activation gave tenants a seamless, secure cashless payment experience during a period of peak footfall — reinforcing GoPay's presence in high-visibility retail activations and strengthening merchant confidence in IoT-enabled payment infrastructure."
+    },
+    mokagofood: {
+      date: "November 2021 — January 2022",
+      title: "MOKA × GoFood Growth Program",
+      photo: null,
+      media: null,
+      desc: "Co-led a cross-platform growth initiative pairing MOKA's point-of-sale sales motion with GoFood's merchant network and demand-side reach.\n\nBy aligning MOKA's sales execution with GoFood's F&B customer base, the program successfully onboarded hundreds of outlets onto the combined ecosystem.\n\nImpact: the partnership expanded merchant revenue channels, deepened ecosystem stickiness, and demonstrated the value of cross-product GTM collaboration within GoTo's merchant portfolio."
+    }
+  };
+
+  function openProject(key){
+    const p = projects[key];
+    if(!p) return;
+    document.getElementById('modalDate').textContent = p.date;
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalDesc').textContent = p.desc;
+    const photoEl = document.getElementById('modalPhoto');
+    if(p.photo){
+      photoEl.innerHTML = '<img src="'+p.photo+'" alt="'+p.title+'">';
+    } else {
+      photoEl.innerHTML = 'Project photo — add image to see it here';
+    }
+    const mediaEl = document.getElementById('modalMedia');
+    if(p.media){
+      mediaEl.href = p.media;
+      mediaEl.style.display = 'inline-flex';
+    } else {
+      mediaEl.style.display = 'none';
+    }
+    document.getElementById('projectModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProject(){
+    document.getElementById('projectModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeProject();
+  });
+</script>
 
 <script>
   const els = document.querySelectorAll('.reveal');
