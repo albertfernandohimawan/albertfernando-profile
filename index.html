@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Albert Fernando Himawan — Commercial &amp; Sales Leader</title>
+<meta name="description" content="Albert Fernando Himawan — Commercial Sales Leader, Fintech & SaaS, Jakarta. 10+ years scaling GTM, teams, and merchant portfolios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12213B;
+    --ink-text:#1B2431;
+    --line:#E4E1D9;
+    --line-strong:#D6D2C6;
+    --paper:#FFFFFF;
+    --surface:#FAF9F5;
+    --slate:#5B6472;
+    --green:#2E6B45;
+    --amber:#B9752B;
+    --grad-a:#22D3EE;
+    --grad-b:#5B7FF5;
+    --grad-c:#9B6BF2;
+    --grad: linear-gradient(115deg, var(--grad-a) 0%, var(--grad-b) 50%, var(--grad-c) 100%);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink-text);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .serif{font-family:'Plus Jakarta Sans', sans-serif;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+
+  .skip{position:absolute; left:-999px; top:0; background:var(--amber); color:#fff; padding:10px 16px; z-index:100;}
+  .skip:focus{left:16px; top:16px;}
+
+  header.hero{
+    background:var(--paper);
+    color:var(--ink-text);
+    padding:96px 0 0;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--slate);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:28px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px; height:7px; border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 0 3px rgba(46,107,69,.15);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr 240px;
+    gap:48px;
+    align-items:start;
+  }
+  .hero-photo{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border:1px solid var(--line);
+    background:var(--surface);
+  }
+  h1.name{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-weight:600;
+    font-size:clamp(38px, 5.4vw, 68px);
+    line-height:1.03;
+    letter-spacing:-.01em;
+    max-width:760px;
+    color:var(--ink);
+  }
+  .role-line{
+    margin-top:22px;
+    font-size:clamp(17px, 2vw, 21px);
+    color:var(--slate);
+    max-width:600px;
+    font-weight:400;
+  }
+  .role-line strong{color:var(--ink); font-weight:500;}
+  .hero-meta{
+    margin-top:40px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--slate);
+  }
+  .hero-meta a{text-decoration:none; border-bottom:1px solid var(--line-strong); padding-bottom:2px;}
+  .hero-meta a:hover{border-color:var(--green); color:var(--green);}
+
+  .ticker{
+    background:var(--ink);
+    margin-top:48px;
+  }
+  .ticker-row{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+  .ticker-item{
+    padding:30px 28px;
+    border-right:1px solid rgba(255,255,255,.12);
+  }
+  .ticker-item:last-child{border-right:none;}
+  .ticker-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:clamp(24px, 2.6vw, 32px);
+    color:#fff;
+    font-weight:500;
+    display:flex;
+    align-items:baseline;
+    gap:6px;
+  }
+  .ticker-num .up{color:#7BC79A; font-size:15px;}
+  .ticker-label{
+    margin-top:8px;
+    font-size:12px;
+    color:#B9C4D6;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+  }
+
+  section{padding:76px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:44px;
+    gap:20px;
+  }
+  h2.section-title{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-weight:600;
+    font-size:clamp(26px, 3vw, 34px);
+    color:var(--ink);
+  }
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    white-space:nowrap;
+  }
+
+  .summary p{
+    font-size:19px;
+    max-width:760px;
+    color:var(--ink-text);
+  }
+  .summary p + p{margin-top:16px;}
+
+  .exp-entry{
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:32px;
+    padding:28px 0;
+    border-top:1px solid var(--line);
+  }
+  .exp-entry:first-of-type{border-top:none;}
+  .exp-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--slate);
+    padding-top:4px;
+  }
+  .exp-org{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-weight:600;
+    font-size:20px;
+    margin-bottom:2px;
+    color:var(--ink);
+  }
+  .exp-role{
+    color:var(--amber);
+    font-weight:500;
+    font-size:14.5px;
+    margin-bottom:14px;
+  }
+  .exp-entry ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
+  .exp-entry li{
+    position:relative;
+    padding-left:18px;
+    font-size:15px;
+    color:var(--ink-text);
+  }
+  .exp-entry li::before{
+    content:"";
+    position:absolute; left:0; top:8px;
+    width:5px; height:5px;
+    background:var(--green);
+  }
+  .exp-group-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin:36px 0 4px;
+  }
+  .exp-group-label:first-child{margin-top:0;}
+
+  .comp-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .comp-card{
+    background:var(--paper);
+    padding:26px 24px;
+  }
+  .comp-card h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--amber);
+    margin-bottom:12px;
+  }
+  .comp-card p{font-size:14.5px; color:var(--ink-text);}
+
+  .tags{display:flex; flex-wrap:wrap; gap:9px; margin-top:36px;}
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    padding:7px 13px;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink-text);
+  }
+
+  .venture{
+    padding:26px 0;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:32px;
+  }
+  .venture:first-of-type{border-top:none;}
+  .venture-title{font-family:'Plus Jakarta Sans', sans-serif; font-weight:600; font-size:19px; color:var(--ink);}
+  .venture-date{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--slate); margin-top:4px;}
+  .venture p{font-size:15px; color:var(--ink-text);}
+
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .edu-block h3{font-family:'Plus Jakarta Sans', sans-serif; font-size:20px; font-weight:600; margin-bottom:6px; color:var(--ink);}
+  .edu-meta{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--slate); margin-bottom:14px;}
+  .gpa-badge{
+    display:inline-flex; align-items:baseline; gap:6px;
+    font-family:'IBM Plex Mono', monospace;
+    background:var(--ink); color:#fff;
+    padding:6px 12px; font-size:13px; margin-top:6px;
+  }
+  .cert-list, .award-list{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .cert-list li, .award-list li{
+    font-size:14.5px;
+    padding-left:16px;
+    position:relative;
+    color:var(--ink-text);
+  }
+  .cert-list li::before, .award-list li::before{
+    content:"—";
+    position:absolute; left:0; color:var(--slate);
+  }
+  .award-list li::before{color:var(--amber);}
+
+  footer{
+    background:var(--ink);
+    color:#fff;
+    padding:76px 0 40px;
+  }
+  .footer-title{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-weight:600;
+    font-size:clamp(30px, 4vw, 44px);
+    max-width:620px;
+    line-height:1.15;
+  }
+  .footer-links{
+    margin-top:36px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px 32px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+  }
+  .footer-links a{
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,.2);
+    padding-bottom:3px;
+  }
+  .footer-links a:hover{border-color:#7BC79A; color:#7BC79A;}
+  .footer-bottom{
+    margin-top:64px;
+    padding-top:24px;
+    border-top:1px solid rgba(255,255,255,.12);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:#B9C4D6;
+  }
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+
+  .accent-bar{height:3px; background:var(--grad); width:100%;}
+
+  .grad-num{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:var(--grad-c);
+  }
+
+  .tag-ai{
+    position:relative;
+    border:1px solid transparent;
+    background:
+      linear-gradient(var(--surface), var(--surface)) padding-box,
+      var(--grad) border-box;
+    color:var(--ink);
+    font-weight:500;
+  }
+
+  /* ===== ACTIVITY GALLERY ===== */
+  .activity-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .activity-item{
+    position:relative;
+    overflow:hidden;
+    background:var(--surface);
+  }
+  .activity-item:first-child{grid-row:1 / 3;}
+  .activity-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    filter:grayscale(15%);
+    transition:filter .4s ease, transform .5s ease;
+  }
+  .activity-item:hover img{filter:grayscale(0%); transform:scale(1.03);}
+  .activity-cap{
+    position:absolute;
+    left:0; bottom:0; right:0;
+    padding:14px 16px;
+    background:linear-gradient(0deg, rgba(18,33,59,.82), transparent);
+    color:#fff;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo{max-width:220px; margin:0 auto;}
+    .ticker-row{grid-template-columns:repeat(2,1fr);}
+    .ticker-item:nth-child(2){border-right:none;}
+    .ticker-item{border-bottom:1px solid rgba(255,255,255,.12);}
+    .exp-entry, .venture{grid-template-columns:1fr; gap:8px;}
+    .comp-grid{grid-template-columns:1fr;}
+    .two-col{grid-template-columns:1fr; gap:44px;}
+    .wrap{padding:0 22px;}
+    .activity-grid{grid-template-columns:1fr 1fr; grid-template-rows:auto;}
+    .activity-item:first-child{grid-row:auto; grid-column:1 / 3;}
+  }
+</style>
+</head>
+<body>
+
+<div class="accent-bar" aria-hidden="true"></div>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Open to new opportunities · Jakarta, Indonesia</p>
+        <h1 class="name">Albert Fernando<br>Himawan</h1>
+        <p class="role-line">Commercial leader with <strong>10+ years</strong> of experience across Indonesia's tech, fintech, and SaaS ecosystem — building field teams, designing go-to-market strategy, and converting merchant portfolios into durable retention.</p>
+        <div class="hero-meta">
+          <a href="mailto:albertfernandohimawan@gmail.com">albertfernandohimawan@gmail.com</a>
+          <a href="tel:+6287878870707">+62 878 7887 0707</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <span>Jakarta, Indonesia</span>
+        </div>
+      </div>
+      <img class="hero-photo" src="assets/headshot.jpg" alt="Portrait of Albert Fernando Himawan">
+    </div>
+  </div>
+  <div class="ticker">
+    <div class="wrap">
+      <div class="ticker-row">
+        <div class="ticker-item">
+          <div class="ticker-num">70 <span class="up">people</span></div>
+          <div class="ticker-label">Team led directly</div>
+        </div>
+        <div class="ticker-item">
+          <div class="ticker-num">#1 <span class="up">national</span></div>
+          <div class="ticker-label">Merchant portfolio retention</div>
+        </div>
+        <div class="ticker-item">
+          <div class="ticker-num grad-num">89%</div>
+          <div class="ticker-label">Monthly retention, new merchants</div>
+        </div>
+        <div class="ticker-item">
+          <div class="ticker-num grad-num">120%</div>
+          <div class="ticker-label">Average target attainment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="summary reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Summary</h2>
+        <span class="section-tag">Profile</span>
+      </div>
+      <p>Results-driven sales leader with a track record bridging heavy industry and the rapidly scaling technology/fintech sector, specializing in B2B digital transformation and SME empowerment. Proven ability to spearhead go-to-market strategies, scale new territories, and lead high-performing, cross-functional teams to consistently exceed revenue targets.</p>
+      <p>Currently seeking a Head of / GM-level leadership role with genuine P&amp;L ownership and meaningful team scope, within tech, SaaS, or fintech, based in Jakarta.</p>
+      <div class="tags">
+        <span class="tag">GTM Expansion</span>
+        <span class="tag">P&amp;L Management</span>
+        <span class="tag">Enterprise B2B Sales</span>
+        <span class="tag">SaaS / Fintech Ecosystem</span>
+        <span class="tag">Churn Reduction</span>
+        <span class="tag">Cross-Functional Leadership</span>
+        <span class="tag">CRM · Salesforce / HubSpot</span>
+        <span class="tag tag-ai">AI-Driven Sales Analytics</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">In the Field</h2>
+        <span class="section-tag">Team &amp; Leadership</span>
+      </div>
+      <div class="activity-grid">
+        <div class="activity-item">
+          <img src="assets/activity-1.jpg" alt="Team gathering with Jakarta skyline">
+          <div class="activity-cap">Team celebration, Jakarta</div>
+        </div>
+        <div class="activity-item">
+          <img src="assets/activity-2.jpg" alt="Field and team activity">
+          <div class="activity-cap">On the ground</div>
+        </div>
+        <div class="activity-item">
+          <img src="assets/activity-3.jpg" alt="Field and team activity">
+          <div class="activity-cap">Team moment</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Professional Experience</h2>
+        <span class="section-tag">2015 — Present</span>
+      </div>
+
+      <p class="exp-group-label">GoTo Group · GoPay Merchant · Moka — 3 yrs 1 mo</p>
+
+      <div class="exp-entry">
+        <div class="exp-date mono">Feb 2025 — Present</div>
+        <div>
+          <div class="exp-org">District Sales Manager</div>
+          <div class="exp-role">1 year 3 months</div>
+          <ul>
+            <li>Lead 5 GoPay Team Leaders and 1 Moka Area Sales Manager, a total of 70 sales executives, across GMA (QRIS), GoPay Spiker, Moka POS, GoPay Pinjam Modal, and GoPay Agen.</li>
+            <li>Spearhead go-to-market expansion into new territories (Serang &amp; Cilegon) with seamless launch execution.</li>
+            <li>Directed Pilot Project "Keystone" with GoPay Consumer to accelerate QRIS Spiker adoption across Kab. Tangerang, Kota Tangerang, and South Tangerang.</li>
+            <li>Ranked #1 nationally for portfolio health — 89% month-over-month retention for newly onboarded enterprise merchants, via an overhauled post-sales success framework.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date mono">May 2023 — Jan 2025</div>
+        <div>
+          <div class="exp-org">Account Manager, GoPay</div>
+          <div class="exp-role">1 year 9 months</div>
+          <ul>
+            <li>Managed a high-value portfolio of enterprise and SME accounts, driving digital transformation and software ecosystem adoption.</li>
+            <li>Designed data-backed sales playbooks aligning regional execution with global corporate OKRs.</li>
+            <li>Averaged 110% of designated revenue targets, with significant GTV growth on the Managed Merchant portfolio.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="exp-group-label">PT. Moka Teknologi Indonesia — 4 yrs 8 mos</p>
+
+      <div class="exp-entry">
+        <div class="exp-date mono">Oct 2022 — Apr 2023</div>
+        <div>
+          <div class="exp-org">Area Sales Manager</div>
+          <div class="exp-role">7 months</div>
+          <ul>
+            <li>Directed regional commercial operations and led a sales organization driving aggressive market penetration.</li>
+            <li>Architected data-driven go-to-market strategies, optimizing the end-to-end sales cycle.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date mono">Dec 2021 — Oct 2022</div>
+        <div>
+          <div class="exp-org">Senior Sales Executive</div>
+          <div class="exp-role">11 months</div>
+          <ul>
+            <li>Spearheaded retention and growth strategies for high-value MOKA Managed Merchants.</li>
+            <li>Drove adoption of the GoTo merchant ecosystem (MOKA, GoStore, GoBiz Plus) — sustained 120% of designated sales target.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date mono">Sep 2018 — Dec 2021</div>
+        <div>
+          <div class="exp-org">Sales Executive</div>
+          <div class="exp-role">3 years 4 months</div>
+          <ul>
+            <li>Pioneered aggressive territory expansion, establishing a robust B2B client network through high-volume prospecting.</li>
+            <li>Consistently exceeded monthly sales quotas by up to 150%.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Entrepreneurial Experience</h2>
+        <span class="section-tag">2017 — 2022</span>
+      </div>
+
+      <div class="venture">
+        <div>
+          <div class="venture-title">Nyapii by Edho Zell</div>
+          <div class="venture-date">Owner &amp; Managing Partner — Oct 2020 – Mar 2022</div>
+        </div>
+        <p>Orchestrated end-to-end business operations at the peak of the COVID-19 pandemic, executing rapid strategic pivots to sustain business continuity. Forged alliances with Tier-1 F&amp;B consultants and secured national media coverage (Trans 7) and influencer platform exposure.</p>
+      </div>
+
+      <div class="venture">
+        <div>
+          <div class="venture-title">Goodjob Solution Indonesia</div>
+          <div class="venture-date">Founder &amp; CEO — Jan 2017 – Jun 2018</div>
+        </div>
+        <p>Built an O2O platform bridging consumers with informal blue-collar workers, launching with HVAC/AC repair services as the MVP. Selected as a Top 13 National Finalist in "Gerakan 1000 Startup Digital Indonesia," validating the model directly with government ministries and Tier-1 CEOs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Skills &amp; Industry Expertise</h2>
+        <span class="section-tag">Competencies</span>
+      </div>
+      <div class="comp-grid">
+        <div class="comp-card">
+          <h3>Strategic Leadership</h3>
+          <p>P&amp;L Management · GTM Expansion · Change Management · Cross-Functional Leadership</p>
+        </div>
+        <div class="comp-card">
+          <h3>Commercial Excellence</h3>
+          <p>Enterprise B2B Sales · SaaS/Fintech Ecosystem Integration · Strategic Partnerships · Churn Reduction</p>
+        </div>
+        <div class="comp-card">
+          <h3>Data &amp; Technology</h3>
+          <p>AI-Driven Sales Analytics · CRM Optimization (Salesforce/HubSpot) · Predictive Forecasting</p>
+        </div>
+      </div>
+      <div class="tags" style="margin-top:28px;">
+        <span class="tag">Fintech &amp; Digital Payments</span>
+        <span class="tag">SaaS &amp; Point-of-Sale</span>
+        <span class="tag">Merchant Lending</span>
+        <span class="tag">SME &amp; Enterprise Merchant</span>
+        <span class="tag">HoReCa</span>
+        <span class="tag">Retail &amp; Modern Trade</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap two-col">
+      <div class="edu-block">
+        <div class="section-tag" style="margin-bottom:14px;">Education</div>
+        <h3>BINUS University</h3>
+        <div class="edu-meta">Business Management &amp; Marketing · Expected graduation 2027</div>
+        <p style="font-size:14.5px;">6th semester, maintaining Cum Laude standing while leading a high-performance regional sales team in a full-time executive role.</p>
+        <div class="gpa-badge">GPA <strong>3.81</strong> / 4.00</div>
+
+        <div class="section-tag" style="margin:40px 0 14px;">Certifications</div>
+        <ul class="cert-list">
+          <li>AML &amp; Counter-Terrorism Financing (APU PPT) — Midtrans (2025)</li>
+          <li>Leadership Development Program (GoTo Elevate) — Momenta Indonesia (2025)</li>
+          <li>GTF Makers Information Security Training — GoTo Group (2022)</li>
+          <li>Leadership Bootcamp — Transforma Sinergi Indonesia (2022)</li>
+          <li>Business English Communication Skills — English Today (2022)</li>
+        </ul>
+      </div>
+
+      <div class="edu-block">
+        <div class="section-tag" style="margin-bottom:14px;">Honors &amp; Awards</div>
+        <ul class="award-list">
+          <li>Leaders Top Performance "DSM Juara" — Apr 2026</li>
+          <li>Most Elevated Manager — GoTo Elevate 2025</li>
+          <li>Best Account Manager — Q4 2023</li>
+          <li>National Top Performer, GoPay Account Manager — H2 2023</li>
+          <li>Moka Sales Top Performer — Jan–Aug 2022</li>
+          <li>Moka Best Sales Executive — Q4 2021</li>
+          <li>Moka Star Sales — Mar–Nov 2021</li>
+          <li>Moka Best Sales Executive — Q4 2019</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="footer-title">Let's talk about the next commercial leadership role.</p>
+    <div class="footer-links">
+      <a href="mailto:albertfernandohimawan@gmail.com">Email →</a>
+      <a href="tel:+6287878870707">Phone →</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn →</a>
+    </div>
+    <div class="footer-bottom">
+      <span>Albert Fernando Himawan — Jakarta, Indonesia</span>
+      <span>Updated July 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  } else {
+    els.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
